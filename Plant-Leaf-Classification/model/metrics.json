@@ -1,0 +1,604 @@
+{
+  "test_accuracy": 0.8080808080808081,
+  "test_top3_accuracy": 0.898989898989899,
+  "test_samples": 99,
+  "num_classes": 99,
+  "per_class": {
+    "Acer_Capillipes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Acer_Circinatum": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Acer_Mono": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Acer_Opalus": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Acer_Palmatum": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Acer_Pictum": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Acer_Platanoids": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Acer_Rubrum": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Acer_Rufinerve": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Acer_Saccharinum": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Alnus_Cordata": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Alnus_Maximowiczii": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Alnus_Rubra": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Alnus_Sieboldiana": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Alnus_Viridis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Arundinaria_Simonii": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Betula_Austrosinensis": {
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1": 0.5,
+      "support": 1.0
+    },
+    "Betula_Pendula": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Callicarpa_Bodinieri": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Castanea_Sativa": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Celtis_Koraiensis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Cercis_Siliquastrum": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Cornus_Chinensis": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Cornus_Controversa": {
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1": 0.5,
+      "support": 1.0
+    },
+    "Cornus_Macrophylla": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Cotinus_Coggygria": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Crataegus_Monogyna": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Cytisus_Battandieri": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Eucalyptus_Glaucescens": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Eucalyptus_Neglecta": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Eucalyptus_Urnigera": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Fagus_Sylvatica": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Ginkgo_Biloba": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Ilex_Aquifolium": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Ilex_Cornuta": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Liquidambar_Styraciflua": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Liriodendron_Tulipifera": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Lithocarpus_Cleistocarpus": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Lithocarpus_Edulis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Magnolia_Heptapeta": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Magnolia_Salicifolia": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Morus_Nigra": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Olea_Europaea": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Phildelphus": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Populus_Adenopoda": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Populus_Grandidentata": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Populus_Nigra": {
+      "precision": 0.3333333333333333,
+      "recall": 1.0,
+      "f1": 0.5,
+      "support": 1.0
+    },
+    "Prunus_Avium": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Prunus_X_Shmittii": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Pterocarya_Stenoptera": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_Afares": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_Agrifolia": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Alnifolia": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Brantii": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Canariensis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Castaneifolia": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Quercus_Cerris": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_Chrysolepis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Coccifera": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_Coccinea": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Crassifolia": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Crassipes": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Dolicholepis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Ellipsoidalis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Greggii": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Quercus_Hartwissiana": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Ilex": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Imbricaria": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_Infectoria_sub": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Kewensis": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_Nigra": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Palustris": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Phellos": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_Phillyraeoides": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Pontica": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Pubescens": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Pyrenaica": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Rhysophylla": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Quercus_Rubra": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Semecarpifolia": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_Shumardii": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_Suber": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Texana": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Quercus_Trojana": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Quercus_Variabilis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_Vulcanica": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Quercus_x_Hispanica": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Quercus_x_Turneri": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Rhododendron_x_Russellianum": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Salix_Fragilis": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Salix_Intergra": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Sorbus_Aria": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Tilia_Oliveri": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Tilia_Platyphyllos": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Tilia_Tomentosa": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Ulmus_Bergmanniana": {
+      "precision": 0.0,
+      "recall": 0.0,
+      "f1": 0.0,
+      "support": 1.0
+    },
+    "Viburnum_Tinus": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    },
+    "Viburnum_x_Rhytidophylloides": {
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "support": 1.0
+    },
+    "Zelkova_Serrata": {
+      "precision": 1.0,
+      "recall": 1.0,
+      "f1": 1.0,
+      "support": 1.0
+    }
+  },
+  "macro_f1": 0.7592592592592593,
+  "weighted_f1": 0.7592592592592593
+}

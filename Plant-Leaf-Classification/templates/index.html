@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LeafLens | Plant Leaf Classification</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header class="site-header">
+        <nav class="nav container">
+            <a class="brand" href="#top" aria-label="LeafLens home">
+                <span class="brand-mark" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" role="img">
+                        <path d="M20.5 3.5C13 3.5 6.5 6.8 5 13c-.6 2.6.3 5 1.7 6.5C8 21 10.4 22 13 21.4 19.2 19.9 22.5 13.4 22.5 6a2.5 2.5 0 0 0-2-2.5ZM6.8 20.6c.6-4.2 2.6-7.4 6.1-9.9-1.9 3-3.3 6-3.9 9.9h-2.2Z"/>
+                    </svg>
+                </span>
+                <span>
+                    <strong>LeafLens</strong>
+                    <small>Plant Leaf Classification</small>
+                </span>
+            </a>
+            <div class="nav-links">
+                <a href="#classifier">Classify</a>
+                <a href="#command">Command</a>
+                <a href="#about">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main id="top">
+        <section class="hero container">
+            <div class="hero-copy">
+                <span class="eyebrow">Deep learning · Image processing · Security</span>
+                <h1>Identify a leaf from a single photo.</h1>
+                <p>
+                    Upload a leaf image and the model predicts the plant species,
+                    shows its confidence, verifies file integrity with SHA-256 and
+                    displays the processed image.
+                </p>
+                <div class="stats" aria-label="Model information">
+                    <span class="stat"><strong id="stat-classes">—</strong><small>species</small></span>
+                    <span class="stat"><strong id="stat-accuracy">—</strong><small>test accuracy</small></span>
+                    <span class="stat"><strong id="stat-model">—</strong><small>model</small></span>
+                </div>
+            </div>
+            <div class="hero-art" aria-hidden="true">
+                <div class="leaf-orbit">
+                    <svg viewBox="0 0 200 200" role="img">
+                        <defs>
+                            <linearGradient id="leafGradient" x1="0" y1="0" x2="1" y2="1">
+                                <stop offset="0%" stop-color="#6fcf97"/>
+                                <stop offset="100%" stop-color="#176b3a"/>
+                            </linearGradient>
+                        </defs>
+                        <path fill="url(#leafGradient)" d="M170 24C100 30 48 62 34 120c-5 22 2 42 14 54 12 12 32 19 54 14 58-14 74-74 69-164Z"/>
+                        <path fill="none" stroke="#e9f8ee" stroke-width="4" stroke-linecap="round" d="M48 168c20-44 50-78 94-104"/>
+                        <path fill="none" stroke="#e9f8ee" stroke-width="3" stroke-linecap="round" d="M90 120c-2-14-1-26 3-38M112 100c10-3 20-3 31-1M78 142c14-2 27 0 38 5"/>
+                    </svg>
+                </div>
+            </div>
+        </section>
+
+        <div class="container">
+            <div id="model-alert" class="alert alert-warning" hidden></div>
+        </div>
+
+        <section id="classifier" class="container workspace">
+            <article class="card upload-card">
+                <header class="card-header">
+                    <h2>Upload a leaf image</h2>
+                    <p>JPG, JPEG or PNG · maximum 5 MB</p>
+                </header>
+
+                <div id="dropzone" class="dropzone" tabindex="0" role="button" aria-label="Choose or drop a leaf image">
+                    <input type="file" id="file-input" name="file" accept="image/jpeg,image/png" hidden>
+                    <svg class="drop-icon" viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="M12 16V4m0 0L7.5 8.5M12 4l4.5 4.5M4 15v3a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <p><strong>Drop an image here</strong> or <span class="link">browse files</span></p>
+                    <small>Clear, well-lit single-leaf photos work best.</small>
+                </div>
+
+                <div id="preview-wrap" class="preview-wrap" hidden>
+                    <img id="preview" alt="Preview of the uploaded leaf">
+                    <div class="preview-meta">
+                        <span id="file-name" class="file-name"></span>
+                        <span id="file-size" class="file-size"></span>
+                    </div>
+                </div>
+
+                <div id="upload-error" class="alert alert-error" hidden></div>
+
+                <div class="actions">
+                    <button id="classify-btn" class="btn btn-primary" type="button" disabled>
+                        <span class="btn-label">Classify leaf</span>
+                        <span class="spinner" aria-hidden="true"></span>
+                    </button>
+                    <button id="reset-btn" class="btn btn-ghost" type="button" disabled>Reset</button>
+                </div>
+            </article>
+
+            <article class="card result-card" aria-live="polite">
+                <header class="card-header">
+                    <h2>Result</h2>
+                    <p>Prediction, confidence and integrity details</p>
+                </header>
+
+                <div id="result-empty" class="empty-state">
+                    <span class="empty-icon" aria-hidden="true">🍃</span>
+                    <p>Your prediction will appear here.</p>
+                    <small>Upload a leaf image to get started.</small>
+                </div>
+
+                <div id="result" hidden>
+                    <div class="result-top">
+                        <div>
+                            <span id="status-pill" class="pill pill-success">Processed</span>
+                            <h3 id="prediction-name">—</h3>
+                            <p id="prediction-note" class="muted"></p>
+                        </div>
+                        <div class="confidence-ring" id="confidence-ring">
+                            <strong id="confidence-value">0%</strong>
+                            <small>confidence</small>
+                        </div>
+                    </div>
+
+                    <div id="low-confidence" class="alert alert-warning" hidden>
+                        Low confidence — try a sharper photo with a single leaf on a plain background.
+                    </div>
+
+                    <div class="confidence-bar" aria-hidden="true">
+                        <span id="confidence-fill"></span>
+                    </div>
+
+                    <h4>Top predictions</h4>
+                    <ul id="top-predictions" class="prediction-list"></ul>
+
+                    <details class="details">
+                        <summary>Processed image &amp; file details</summary>
+                        <div class="details-body">
+                            <div class="processed-grid">
+                                <figure>
+                                    <img id="original-image" alt="Uploaded leaf" hidden>
+                                    <figcaption>Original</figcaption>
+                                </figure>
+                                <figure>
+                                    <img id="processed-image" alt="Processed leaf" hidden>
+                                    <figcaption>Processed · 224 × 224 · denoised</figcaption>
+                                </figure>
+                            </div>
+                            <dl class="meta-list">
+                                <div><dt>File</dt><dd id="meta-file">—</dd></div>
+                                <div><dt>SHA-256</dt><dd><code id="meta-hash">—</code>
+                                    <button id="copy-hash" class="btn btn-tiny" type="button">Copy</button>
+                                </dd></div>
+                                <div><dt>Integrity</dt><dd><span class="pill pill-success">Verified</span></dd></div>
+                            </dl>
+                        </div>
+                    </details>
+                </div>
+            </article>
+        </section>
+
+        <section id="command" class="container card command-card">
+            <div class="command-copy">
+                <span class="eyebrow">Compiler design demo</span>
+                <h2>Command mode</h2>
+                <p>
+                    The built-in parser runs lexical, syntax and semantic analysis, then
+                    classifies an image that was already uploaded in this session.
+                </p>
+                <code class="syntax">CLASSIFY &lt;filename&gt;</code>
+            </div>
+            <form id="command-form" class="command-console">
+                <label for="command-input">Command</label>
+                <div class="command-row">
+                    <span class="prompt" aria-hidden="true">&gt;</span>
+                    <input id="command-input" type="text" placeholder="CLASSIFY 123.jpg" autocomplete="off" spellcheck="false">
+                    <button class="btn btn-primary" type="submit">Run</button>
+                </div>
+                <pre id="command-output" hidden></pre>
+            </form>
+        </section>
+
+        <section id="about" class="container about">
+            <h2>How it works</h2>
+            <div class="feature-grid">
+                <article>
+                    <span class="feature-icon">🖼️</span>
+                    <h3>Image processing</h3>
+                    <p>OpenCV resizes to 224 × 224, converts to RGB, applies Gaussian blur and scales pixels for the network.</p>
+                </article>
+                <article>
+                    <span class="feature-icon">🧠</span>
+                    <h3>Deep learning</h3>
+                    <p>MobileNetV2 transfer learning classifies <span id="about-classes">the leaf</span> species from the Kaggle leaf dataset.</p>
+                </article>
+                <article>
+                    <span class="feature-icon">🔐</span>
+                    <h3>Integrity check</h3>
+                    <p>Every upload is hashed with SHA-256, validated by extension, MIME type and size, and stored with a safe filename.</p>
+                </article>
+                <article>
+                    <span class="feature-icon">🌐</span>
+                    <h3>Client–server</h3>
+                    <p>Flask exposes REST endpoints for uploads, commands, model info and health checks, consumed by this UI.</p>
+                </article>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container footer-inner">
+            <p>LeafLens · Plant Leaf Classification System</p>
+            <p class="tech">Flask · TensorFlow · OpenCV · NumPy · SHA-256</p>
+        </div>
+    </footer>
+
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+</body>
+</html>

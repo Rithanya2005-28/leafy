@@ -1,0 +1,14 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+uploads/
+legacy_dataset/
+dataset_split/
+images/
+model/*.keras
+model/*.png
+model/*.csv
+!model/class_names.json
+!model/metrics.json
+.pytest_cache/
